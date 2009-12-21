@@ -9,8 +9,8 @@ namespace :permalink_fu do
         puts "Generating permalinks for #{ENV['model']} model"
         require 'permalink_tasks'
         
-        Permalink::Tasks.make_slugs(ENV['model']) do |m|
-          puts "%s('%s') permalink_fu'd to '%s'" % [m.class.to_s, m.id, eval("m.#{ENV['model']}.permalink_field")]
+        PermalinkFu::Automate::Tasks.make_slugs(ENV['model']) do |m|
+          puts "%s('%s') permalink_fu'd to '%s'" % [m.class.to_s, m.id, eval("m.#{Object.const_get(ENV['model']).permalink_field}")]
         end
    end 
 end
