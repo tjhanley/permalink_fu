@@ -37,4 +37,7 @@ set it to nil or a blank string within your model.
 
 Old versions of rails without _changed? attribute support will result in the permalink field being regenerated every save.
 
+[Added 12.20.2009 by Thomas Hanley] Rake task to generate permalinks for existing models. Inspired by friendly_id http://github.com/norman/friendly_id
+
 [Bug Fixed 3.11.2009] Permalink was not being checked for uniqueness when set directly with permalink= on rails versions with _changed?
+
